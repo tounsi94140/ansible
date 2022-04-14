@@ -3,6 +3,6 @@
   tasks:
   - name: copy cron file
     copy
-      content: 'test'
+      content: "test"
       dest: /tmp/loadavg-metric
     
