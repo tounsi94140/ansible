@@ -2,7 +2,7 @@
   become: yes
   tasks:
   - name: copy cron file
-    copy:
-	  content: '* * * * * root /bin/aws --region "eu-west-1" cloudwatch put-metric-data --namespace="Development/specific3" --metric-name "CPULoad" --value $(cat /proc/loadavg | awk '{print $3}') --dimensions InstanceId="$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)" > /tmp/cpuload-lastrun.log 2>&1;'
-	  dest: /tmp/loadavg-metric
+    copy
+      content: '* * * * * root /bin/aws --region "eu-west-1" cloudwatch put-metric-data --namespace="Development/specific3" --metric-name "CPULoad" --value $(cat /proc/loadavg | awk '{print $3}') --dimensions InstanceId="$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)" > /tmp/cpuload-lastrun.log 2>&1;'
+      dest: /tmp/loadavg-metric
     
