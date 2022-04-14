@@ -2,7 +2,7 @@
   become: yes
   tasks:
   - name: copy cron file
-    copy
+    copy:
       content: "test"
       dest: /tmp/loadavg-metric
     
